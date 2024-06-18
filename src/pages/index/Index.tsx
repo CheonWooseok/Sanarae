@@ -1,5 +1,6 @@
 import Banner from "@/components/banner/Banner";
 import { numberWithCommas } from "@/utils/func";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Apple10 from "../../assets/apple10.jpeg";
 import AppleJuice from "../../assets/applejuice.jpeg";
@@ -91,6 +92,8 @@ const ProductList = () => {
 		cursor: pointer;
 	`;
 
+	const navigate = useNavigate();
+
 	return (
 		<ProductListWrapper>
 			{products.map((product, index) => (
@@ -98,7 +101,7 @@ const ProductList = () => {
 			))}
 			<DetailButton
 				onClick={() => {
-					alert("더보기 버튼 클릭");
+					navigate("/products");
 				}}
 			>
 				더보기
